@@ -44,6 +44,18 @@ This directory contains real-world troubleshooting cases with complete investiga
 | case-016 | data-lake | Kerberos auth | Kerberos authentication failures |
 | case-017 | import | Reached timeout | Replica sync thread pool saturation |
 | case-018 | import | ORC compression overflow | Large ORC file import fails, use zstd or reduce file size |
+| case-019 | tablet | Inverted index pending | ALTER TABLE ADD INDEX stuck in PENDING, workaround with history_job_keep_max_second |
+| case-020 | deployment | FE startup blocked | Hive catalog connection blocks FE startup, upgrade to 3.5.0 with lazy connector |
+| case-021 | node | FE OOM metadata | Frequent table create/drop causes memory pressure, use DROP FORCE and reduce concurrency |
+| case-022 | node | FE OOM complex SQL | Complex SQL plan causes memory spike, split queries and scale FE memory |
+| case-023 | node | FE OOM MV refresh | Frequent MV refresh causes slow lock, adjust refresh interval to hourly/daily |
+| case-024 | node | FE OOM Iceberg | Iceberg query with delete files causes memory spike, maintain Iceberg tables regularly |
+| case-025 | node | FE OOM Insert leak | InsertLoadJob memory leak in 3.1-3.3 versions, upgrade to fixed version |
+| case-026 | node | FE crash async-profiler | async-profiler causes JVM crash, disable proc_profile_cpu_enable |
+| case-027 | node | FE OOM heap config | Insufficient JVM heap causes OOM, minimum 16GB for production |
+| case-029 | node | FE memory slow growth | Replica memory leak in 3.3.13-3.3.17, upgrade to 3.3.18+ |
+| case-030 | node | FE machine memory | glibc thread arena causes off-heap growth, set MALLOC_ARENA_MAX=1 |
+| case-031 | node | FE memory spike traffic | Arrow Flight proxy causes traffic surge, disable arrow_flight_proxy_enabled |
 
 ## Case Template
 
