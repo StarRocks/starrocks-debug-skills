@@ -1,5 +1,5 @@
 ---
-name: 01-query
+name: query
 description: "Use when queries are slow, hanging, or returning wrong results. Covers the full FE→BE query hang flow, profile-based bottleneck analysis (scan skew, MERGE time dominance, join OOM, runtime filter), predicate pushdown failures, and bug localization via session variable exclusion. Start here for any query performance complaint on a StarRocks cluster."
 version: 2.0.0
 category: query
@@ -29,7 +29,7 @@ related_cases:
 - case-003-fe-deadlock
 ---
 
-# 01 - Query Troubleshooting
+# Query Troubleshooting
 
 Investigation guide for query hangs, slow queries, profile analysis, scan performance,
 join performance, and bug localization.

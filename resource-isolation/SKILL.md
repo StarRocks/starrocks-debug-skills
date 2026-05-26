@@ -1,5 +1,5 @@
 ---
-name: 10-resource-isolation
+name: resource-isolation
 description: "Use when setting up or troubleshooting resource groups, query queues, or big-query circuit breakers — or when a runaway query is starving other workloads. Covers resource group classifier mismatches (queries falling to default_wg), CPU/memory/scan limit calibration from audit log percentiles, SQL blacklist patterns, query queue full rejection errors, and emergency statistics collection disable when BRPC is saturated."
 version: 2.0.0
 category: resource-isolation
@@ -16,7 +16,7 @@ related_cases:
 - case-015-memory-volatility
 ---
 
-# 10 - Resource Isolation, Query Queue, and Query Governance
+# Resource Isolation, Query Queue, and Query Governance
 
 Investigation guide for resource groups, query queues, big-query circuit breakers, and SQL
 blacklisting.

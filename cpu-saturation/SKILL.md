@@ -1,5 +1,5 @@
 ---
-name: 13-cpu-saturation
+name: cpu-saturation
 description: "Use as the first stop when a BE or FE host shows high CPU (elevated load average or top near 100%). Attributes CPU to the right workload — query pipeline, import flush/compression, compaction threads, background tasks, FE GC, or non-StarRocks processes — then hands off to the appropriate deep-dive skill (query/import/compaction/node). Does not resolve root causes directly; acts as a triage and attribution layer."
 version: 2.0.0
 category: cpu-saturation
@@ -29,7 +29,7 @@ related_cases:
 - case-008-be-oom
 ---
 
-# 13 - CPU Saturation Triage
+# CPU Saturation Triage
 
 Investigation guide for BE or machine CPU saturation. This skill focuses on **attribution**:
 which process, which module, and which workload is consuming CPU.
