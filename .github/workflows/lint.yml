@@ -51,30 +51,53 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Every skill/case/tool .md must start with --- frontmatter
+      - name: SKILL.md files must have name/category/keywords frontmatter
         run: |
           set -euo pipefail
           fail=0
           while IFS= read -r f; do
+            [[ -z "$f" ]] && continue
             first_line=$(head -n 1 "$f")
             if [[ "$first_line" != "---" ]]; then
               echo "::error file=${f}::Missing YAML frontmatter (file must start with '---')."
               fail=1
+              continue
             fi
-            # Required keys: type, category, keywords. case files also need 'issue'.
-            for key in type category keywords; do
-              if ! awk '/^---$/{c++} c==1 && /^'"$key"': /{found=1} c==2{exit} END{exit !found}' "$f"; then
-                echo "::error file=${f}::Frontmatter missing required key '${key}'."
+            for key in name category keywords; do
+              if ! awk '/^---$/{c++} c==1 && /^'"$key"':/{found=1} c==2{exit} END{exit !found}' "$f"; then
+                echo "::error file=${f}::SKILL.md missing required frontmatter key '${key}'."
                 fail=1
               fi
             done
-            if [[ "$f" == ./cases/* ]]; then
+          done < <(find . -path './.git' -prune -o -name 'SKILL.md' -print | grep -v '^\./.git')
+          exit $fail
+
+      - name: Reference files must have type/category/keywords; case files also need issue
+        run: |
+          set -euo pipefail
+          fail=0
+          while IFS= read -r f; do
+            [[ -z "$f" ]] && continue
+            first_line=$(head -n 1 "$f")
+            if [[ "$first_line" != "---" ]]; then
+              echo "::error file=${f}::Missing YAML frontmatter (file must start with '---')."
+              fail=1
+              continue
+            fi
+            for key in type category keywords; do
+              if ! awk '/^---$/{c++} c==1 && /^'"$key"':/{found=1} c==2{exit} END{exit !found}' "$f"; then
+                echo "::error file=${f}::Reference file missing required frontmatter key '${key}'."
+                fail=1
+              fi
+            done
+            # case-*.md files must also declare the specific issue
+            if [[ "$(basename "$f")" == case-* ]]; then
               if ! awk '/^---$/{c++} c==1 && /^issue: /{found=1} c==2{exit} END{exit !found}' "$f"; then
                 echo "::error file=${f}::Case file missing required frontmatter key 'issue'."
                 fail=1
               fi
             fi
-          done < <(find skills cases tools -type f -name '*.md' ! -name '_index.md')
+          done < <(find . -path './.git' -prune -o -path '*/references/*.md' -print | grep -v '^\./.git')
           exit $fail
 
   markdown-tables:
