@@ -1,0 +1,282 @@
+{
+  "version": 1,
+  "project": "starrocks-debug-skills",
+  "skills": [
+    {
+      "name": "query",
+      "keywords": [
+        "query hang",
+        "slow query",
+        "profile",
+        "scan",
+        "join",
+        "data skew",
+        "runtime filter",
+        "low cardinality"
+      ],
+      "references": [
+        "02-profile-and-sql-toolkit.md",
+        "03-statistics-index.md",
+        "case-014-scan-skew.md"
+      ],
+      "scripts": [
+        "analyze_logs.py"
+      ]
+    },
+    {
+      "name": "import",
+      "keywords": [
+        "import",
+        "broker load",
+        "stream load",
+        "routine load",
+        "RPC failed",
+        "publish timeout",
+        "primary key",
+        "flink connector",
+        "profile",
+        "reached timeout",
+        "slow import"
+      ],
+      "references": [
+        "02-network-and-routineload.md",
+        "03-import-schema-queries.md",
+        "case-001-broker-load-backlog.md",
+        "case-002-rpc-failed-statistics.md",
+        "case-017-reached-timeout-replica-sync.md",
+        "case-018-orc-compression-buffer-overflow.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "node",
+      "keywords": [
+        "BE crash",
+        "BE OOM",
+        "FE deadlock",
+        "FE Full GC",
+        "FE heap memory",
+        "memory tracker",
+        "lock ordering",
+        "DeadLockChecker",
+        "jstack",
+        "fair lock"
+      ],
+      "references": [
+        "02-stack-trace-and-memory.md",
+        "03-fe-be-metrics.md",
+        "case-003-fe-deadlock.md",
+        "case-007-memory-tracking-leak.md",
+        "case-008-be-oom.md",
+        "case-021-fe-oom-metadata-operations.md",
+        "case-022-fe-oom-complex-sql-plan.md",
+        "case-023-fe-oom-mv-frequent-refresh.md",
+        "case-024-fe-oom-iceberg-query.md",
+        "case-025-fe-oom-insert-memory-leak.md",
+        "case-026-fe-crash-async-profiler.md",
+        "case-027-fe-oom-heap-config-insufficient.md",
+        "case-029-fe-heap-memory-slow-growth.md",
+        "case-030-fe-machine-memory-growth-malloc-arena.md",
+        "case-031-fe-machine-memory-spike-traffic.md"
+      ],
+      "scripts": [
+        "analyze_logs.py"
+      ]
+    },
+    {
+      "name": "materialized-view",
+      "keywords": [
+        "MV refresh",
+        "MV timeout",
+        "MV inactive",
+        "query rewrite",
+        "sync MV",
+        "async MV"
+      ],
+      "references": [
+        "03-mv-diagnostic-sql.md",
+        "04-mv-diagnostic-commands.md",
+        "05-task-runs-schema.md",
+        "case-012-mv-refresh-failures.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "data-lake",
+      "keywords": [
+        "HMS",
+        "Hive",
+        "Kerberos",
+        "HDFS",
+        "S3",
+        "external table",
+        "data lake",
+        "catalog",
+        "cache",
+        "metadata cache",
+        "data cache",
+        "freshness",
+        "Iceberg"
+      ],
+      "references": [
+        "case-006-network-saturation.md",
+        "case-016-kerberos-authentication.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "shared-data",
+      "keywords": [
+        "DataCache",
+        "S3",
+        "FE leader switch",
+        "shared-data",
+        "StarCache",
+        "multipart upload",
+        "vacuum",
+        "compaction score"
+      ],
+      "references": [
+        "02-datacache-schema-queries.md",
+        "case-009-stream-load-stuck.md",
+        "case-010-datacache-corruption.md",
+        "case-011-multi-root-cause.md",
+        "case-013-datacache-autoscaling.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "tablet",
+      "keywords": [
+        "tablet health",
+        "tablet balance",
+        "data skew",
+        "bucket",
+        "compaction",
+        "version count"
+      ],
+      "references": [
+        "02-schema-change-and-tablets.md",
+        "03-tablet-schema-queries.md",
+        "case-004-disk-balancing.md",
+        "case-019-inverted-index-pending.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "deployment",
+      "keywords": [
+        "FE startup",
+        "BE startup",
+        "port conflict",
+        "BDB",
+        "JDK",
+        "priority_networks",
+        "helper",
+        "NTP"
+      ],
+      "references": [
+        "02-deployment-diagnostics.md",
+        "03-rbac-permissions.md",
+        "case-005-ssl-certificate.md",
+        "case-020-fe-startup-hive-catalog-block.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "high-concurrency",
+      "keywords": [
+        "high QPS",
+        "connection pool",
+        "PreparedStatement",
+        "query cache",
+        "pipeline_dop",
+        "primary key",
+        "short circuit"
+      ],
+      "references": [
+        "case-015-memory-volatility.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "resource-isolation",
+      "keywords": [
+        "resource group",
+        "query queue",
+        "SQL blacklist",
+        "big query",
+        "circuit breaker",
+        "governance"
+      ],
+      "references": [
+        "02-emergency-disable.md",
+        "03-be-threads-schema.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "balance",
+      "keywords": [
+        "balance",
+        "tablet scheduler",
+        "clone",
+        "repair",
+        "decommission",
+        "colocate",
+        "replica missing",
+        "disk balance"
+      ],
+      "references": [
+        "02-decommission-checklist.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "compaction",
+      "keywords": [
+        "compaction",
+        "too many versions",
+        "compaction score",
+        "base compaction",
+        "cumulative compaction",
+        "size-tiered compaction",
+        "rowset",
+        "version count",
+        "primary key compaction",
+        "update compaction",
+        "delete version",
+        "starrocks_fe_max_tablet_compaction_score",
+        "starrocks_be_tablet_base_max_compaction_score",
+        "starrocks_be_tablet_cumulative_max_compaction_score",
+        "starrocks_be_tablet_update_max_compaction_score"
+      ],
+      "references": [
+        "02-compaction-schema-queries.md",
+        "case-014-scan-skew.md"
+      ],
+      "scripts": []
+    },
+    {
+      "name": "cpu-saturation",
+      "keywords": [
+        "CPU high",
+        "CPU full",
+        "CPU saturation",
+        "high load",
+        "load average",
+        "perf top",
+        "thread pool",
+        "hot function",
+        "system load",
+        "process cpu"
+      ],
+      "references": [
+        "02-cpu-io-diagnostics.md"
+      ],
+      "scripts": [
+        "analyze_logs.py"
+      ]
+    }
+  ]
+}
