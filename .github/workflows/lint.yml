@@ -64,7 +64,7 @@ jobs:
               continue
             fi
             for key in name category keywords; do
-              if ! awk '/^---$/{c++} c==1 && /^'"$key"': /{found=1} c==2{exit} END{exit !found}' "$f"; then
+              if ! awk '/^---$/{c++} c==1 && /^'"$key"':/{found=1} c==2{exit} END{exit !found}' "$f"; then
                 echo "::error file=${f}::SKILL.md missing required frontmatter key '${key}'."
                 fail=1
               fi
@@ -85,7 +85,7 @@ jobs:
               continue
             fi
             for key in type category keywords; do
-              if ! awk '/^---$/{c++} c==1 && /^'"$key"': /{found=1} c==2{exit} END{exit !found}' "$f"; then
+              if ! awk '/^---$/{c++} c==1 && /^'"$key"':/{found=1} c==2{exit} END{exit !found}' "$f"; then
                 echo "::error file=${f}::Reference file missing required frontmatter key '${key}'."
                 fail=1
               fi
