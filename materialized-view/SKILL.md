@@ -1,5 +1,5 @@
 ---
-name: 04-materialized-view
+name: materialized-view
 description: "Use when async materialized views are failing to refresh, timing out, becoming inactive, or query rewrite is not triggering. Covers refresh OOM (spill-to-disk), timeout tuning, MV reactivation, staleness tolerance for query rewrite, sync MV hit verification via EXPLAIN, FE restart impact on refresh schedules, and S3 rate limiting during refresh."
 version: 2.0.0
 category: materialized-view
@@ -16,7 +16,7 @@ related_cases:
 - case-012-mv-refresh-failures
 ---
 
-# 04 - Materialized View Troubleshooting
+# Materialized View Troubleshooting
 
 Investigation guide for async MV refresh failures, refresh timeouts, MV inactivation,
 query rewrite failures, and sync MV optimization.

@@ -76,7 +76,7 @@ Skill categories: `query` `import` `node` `materialized-view` `data-lake`
 
 ```yaml
 ---
-name: <NN>-<category>          # e.g. 13-cpu-saturation
+name: <category>               # matches directory name, e.g. cpu-saturation
 description: >
   Use when <symptom or trigger condition>. Covers <key scenarios>.
 version: 1.0.0

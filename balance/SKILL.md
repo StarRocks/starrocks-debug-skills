@@ -1,5 +1,5 @@
 ---
-name: 11-balance
+name: balance
 description: "Use when the tablet scheduler is unhealthy: replicas are missing, clone tasks are failing or timing out, balance is too slow (disk usage skewed) or too aggressive (impacting imports), BE decommission is stuck, or colocate groups are unstable. Covers SHOW PROC /cluster_balance analysis, fe_tablet_schedules system table, clone slot tuning, and decommission unblocking via recycle-bin and replica count checks."
 version: 2.0.0
 category: balance
@@ -18,7 +18,7 @@ related_cases:
 - case-004-disk-balancing
 ---
 
-# 11 - Balance & Tablet Scheduler Troubleshooting
+# Balance & Tablet Scheduler Troubleshooting
 
 Investigation guide for tablet scheduling, cluster balance, replica repair, and
 decommission issues.

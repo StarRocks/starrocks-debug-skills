@@ -1,5 +1,5 @@
 ---
-name: 09-high-concurrency
+name: high-concurrency
 description: "Use when optimizing for high-QPS (thousands of queries/sec) workloads or diagnosing throughput plateaus and latency spikes under load. Covers pipeline_dop=1 tuning, connection pooling (HikariCP/Druid), PreparedStatement plan caching, query cache hit-rate analysis, PK model point-query optimization (short-circuit scan, persistent index), and detecting session-level timeout overrides that cause memory volatility."
 version: 2.0.0
 category: high-concurrency
@@ -17,7 +17,7 @@ related_cases:
 - case-015-memory-volatility
 ---
 
-# 09 - High-Concurrency Best Practices
+# High-Concurrency Best Practices
 
 Investigation and tuning guide for high-QPS workloads: data modeling, primary-key
 optimization, query cache, pipeline parallelism, connection pooling, and emergency

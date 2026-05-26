@@ -1,5 +1,5 @@
 ---
-name: 02-import
+name: import
 description: "Use when import jobs are slow, timing out, or failing — Stream Load, Broker Load, Routine Load, INSERT INTO, Flink connector. Covers write-slow triage (async_delta_writer / memtable_flush / segment_replicate_sync thread pools), publish timeout on PK tables, RPC Failed errors, Reached timeout auto-diagnostics (v3.4+), and load profile analysis. Also covers read-slow causes and Kafka partition bottlenecks."
 version: 2.0.0
 category: import
@@ -28,7 +28,7 @@ related_cases:
 - case-009-stream-load-stuck
 ---
 
-# 02 - Import Troubleshooting
+# Import Troubleshooting
 
 Investigation guide for import slowness, timeouts, RPC failures, publish timeouts,
 Primary Key model tuning, and load profile analysis.

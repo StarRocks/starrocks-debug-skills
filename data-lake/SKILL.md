@@ -1,5 +1,5 @@
 ---
-name: 05-data-lake
+name: data-lake
 description: "Use when external catalog queries (Hive, Iceberg, S3, HDFS, Paimon) are failing, hanging, or returning stale data. Covers Hive Metastore connectivity errors, Kerberos authentication failures (keytab expiry, GSS errors, clock skew), S3 rate limiting and SSL issues, network saturation from HMS, and metadata cache TTL tuning for data freshness."
 version: 2.0.0
 category: data-lake
@@ -25,7 +25,7 @@ related_cases:
 - case-016-kerberos-authentication
 ---
 
-# 05 - Data Lake / External Table Troubleshooting
+# Data Lake / External Table Troubleshooting
 
 Investigation guide for Hive Metastore connectivity, Kerberos authentication, HDFS/S3
 access errors, and external catalog query failures.

@@ -1,5 +1,5 @@
 ---
-name: 07-tablet
+name: tablet
 description: "Use when investigating tablet-level structural problems: data skew (one tablet 10× larger than peers), too many tablet versions blocking writes (too many versions error), error-state replicas, over-sharding causing high FE metadata overhead, or disk balance retry loops. Covers SHOW TABLET analysis, be_tablets SQL queries, bucket key optimization, and tablet health thresholds (VersionCount, DataSize variance, num_rowset)."
 version: 2.0.0
 category: tablet
@@ -16,7 +16,7 @@ related_cases:
 - case-014-scan-skew
 ---
 
-# 07 - Tablet Governance
+# Tablet Governance
 
 Investigation guide for tablet health, balance, data skew, bucket optimization, and
 version-count / compaction-lag issues.
