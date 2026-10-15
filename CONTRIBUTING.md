@@ -67,6 +67,11 @@ Skill categories: `query` `import` `node` `materialized-view` `data-lake`
 2. Add `references/` and optionally `scripts/` subdirectories.
 3. Add the new category name to `SKILL_CATEGORIES` in `scripts/skill_converter.py`.
 4. Add a row to the Skills Categories table in `README.md`.
+5. Add the category path to `skills` in `.codex-plugin/plugin.json`.
+
+The root `SKILL.md` is the complete-bundle entry point for the Vercel Skills CLI;
+keep category workflows in their existing directories so bundled relative links
+continue to resolve.
 
 ---
 

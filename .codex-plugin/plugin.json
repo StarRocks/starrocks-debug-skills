@@ -1,0 +1,20 @@
+{
+  "name": "starrocks-debug-skills",
+  "version": "1.0.0",
+  "description": "StarRocks cluster diagnostics and troubleshooting workflows.",
+  "skills": [
+    "./query",
+    "./import",
+    "./node",
+    "./materialized-view",
+    "./data-lake",
+    "./shared-data",
+    "./tablet",
+    "./deployment",
+    "./high-concurrency",
+    "./resource-isolation",
+    "./balance",
+    "./compaction",
+    "./cpu-saturation"
+  ]
+}

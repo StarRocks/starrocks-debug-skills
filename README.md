@@ -16,6 +16,9 @@ This skill systematizes troubleshooting experience to help provide structured in
 ```
 starrocks-debug-skills/
 ├── README.md
+├── SKILL.md                    # Complete-bundle entry point for Skills CLI
+├── .agents/plugins/marketplace.json # Codex marketplace
+├── .codex-plugin/plugin.json    # Codex category skill declarations
 ├── LICENSE
 ├── CONTRIBUTING.md
 ├── guides/                     # Cross-skill cascade guides
@@ -105,6 +108,31 @@ python3 scripts/analyze_logs.py "2025-04-15 00:00:00" "2025-04-15 01:00:00" "Mem
 ```
 
 ## Installation
+
+Choose one installation method for each agent to avoid duplicate skills.
+
+### Codex marketplace
+
+Register the marketplace, then install the plugin:
+
+```bash
+codex plugin marketplace add StarRocks/starrocks-debug-skills
+codex plugin add starrocks-debug-skills@starrocks
+```
+
+The plugin exposes all category skills and includes the shared guides,
+references, and scripts. Refresh it with `codex plugin marketplace upgrade starrocks`.
+
+### Vercel Skills CLI
+
+Install the complete bundle for Codex in the current project:
+
+```bash
+npx skills add StarRocks/starrocks-debug-skills --agent codex --skill starrocks-debug-skills
+```
+
+Add `--global` to make it available across projects. The bundle entry point routes
+to the category workflows and keeps their shared guides and references together.
 
 ### Claude Code
 
